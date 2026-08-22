@@ -2,11 +2,9 @@ package co.edu.demoacademico.controller;
 
 import co.edu.demoacademico.model.Estudiante;
 import co.edu.demoacademico.service.EstudianteService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,7 +16,7 @@ public class EstudianteController {
     private EstudianteService estudianteService;
 
     @PostMapping
-    public Estudiante create(Estudiante estudiante) {
+    public Estudiante create(@Valid @RequestBody Estudiante estudiante) {
         return estudianteService.create(estudiante);
     }
 
