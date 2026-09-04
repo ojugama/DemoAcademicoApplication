@@ -48,4 +48,9 @@ public class EstudianteController {
 
         return ResponseBuilder.ok("Se ha eliminado correctamente el estudiante.", null);
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<ApiResponse<EstudianteDTO>> findByEmail(@RequestParam String email) {
+        return ResponseBuilder.ok("OK", estudianteHandler.findByEmail(email));
+    }
 }

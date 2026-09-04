@@ -14,4 +14,6 @@ public interface IEstudianteService {
     Estudiante update(Long id, Estudiante estudiante);
 
     void delete(Long id);
+
+    Estudiante findByEmail(String email);
 }

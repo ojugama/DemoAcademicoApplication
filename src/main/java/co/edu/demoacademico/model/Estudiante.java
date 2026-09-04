@@ -1,13 +1,10 @@
 package co.edu.demoacademico.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="estudiantes")
 public class Estudiante {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -50,5 +47,4 @@ public class Estudiante {
     public void setEmail(String email) {
         this.email = email;
     }
-
 }

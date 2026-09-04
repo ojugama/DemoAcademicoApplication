@@ -57,4 +57,10 @@ public class EstudianteService implements IEstudianteService {
         Estudiante existingEstudiante = findById(id);
         estudianteRepository.delete(existingEstudiante);
     }
+
+    @Override
+    public Estudiante findByEmail(String email) {
+        return estudianteRepository.findByEmail(email)
+                .orElseThrow(() -> new NotFoundException("Estudiante no encontrado con email: " + email + "."));
+    }
 }

@@ -54,4 +54,8 @@ public class EstudianteHandler {
     public void delete(Long id) {
         estudianteService.delete(id);
     }
+
+    public EstudianteDTO findByEmail(String email) {
+        return toDto(estudianteService.findByEmail(email));
+    }
 }
