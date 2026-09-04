@@ -12,12 +12,9 @@ public class Estudiante {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "El nombre es obligatorio.")
     @Column(nullable = false)
     private String nombre;
 
-    @NotBlank(message = "El email es obligatorio.")
-    @Email(message = "Formato de email inválido.")
     @Column(nullable = false, unique = true)
     private String email;
 
