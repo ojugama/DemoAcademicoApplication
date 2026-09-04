@@ -1,27 +1,11 @@
-package co.edu.demoacademico.model;
+package co.edu.demoacademico.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name="estudiantes")
-public class Estudiante {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class EstudianteDTO {
     private Long id;
-
-    @Column(nullable = false)
     private String nombre;
-
-    @Column(nullable = false, unique = true)
     private String email;
 
-    public Estudiante() {
-    }
-
-    public Estudiante(Long id, String nombre, String email) {
-        this.id = id;
-        this.nombre = nombre;
-        this.email = email;
+    public EstudianteDTO() {
     }
 
     public Long getId() {

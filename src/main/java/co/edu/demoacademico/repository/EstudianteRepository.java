@@ -6,10 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface EstudianteRepository extends JpaRepository<Estudiante, Long> {
+    Boolean existsByEmail(String email);
 
-    // =================================
-    // ZONA DE ACCESO A LA BD (JPA)
-    // =================================
+    Boolean existsByEmailAndIdNot(String email, Long id);
 
     Optional<Estudiante> findByEmail(String email);
 }
